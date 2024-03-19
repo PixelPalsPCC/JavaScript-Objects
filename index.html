@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    
+    
+    <h1> Creating JavaScript Objects</h1>
+    <p id= "demo1"></p>
+    <p id = "demo2"></p> <!--HTML Code-->
+    <p id = "demo3"></p>
+
+    <!-- Method 1 of Creating Objects -->
+    <script> //Script tags enclose JacaScript Code!
+
+      var student = {
+        name: "Cindy",
+        age: 23,
+        studies: "WebDev"
+      };
+
+      document.getElementById("demo1").innerHTML = student.name + " of age " + 
+      student.age + " studies " + student.studies;
+    </script>
+
+    <!-- Method 2 of Creating Objects -->
+    <script>
+
+      var student = new Object();
+      student.name = "Fe";
+      student.age = 18;
+      student.studies = "Cybersecurity"
+    
+     document.getElementById("demo2").innerHTML = student.name + " of age " + 
+      student.age + " studies " + student.studies;
+
+    </script>
+
+    <!-- Method 3 of Creating Objects -->
+    <script>
+
+      function stud(name,age,studies){
+        this.name = name;
+        this.age = age;
+        this.studies = studies;
+      }
+      //needed the key word "new" for this to display
+      var student = new stud("Jac", 20, "CompSci")
+      document.getElementById("demo3").innerHTML = student.name + " of age " + 
+      student.age + " studies " + student.studies;
+
+    </script>
+
+
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
